@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.column {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    width: 22%;
+    height: 90vh;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.column.hovered {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.flight-strip {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: move;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 5px;
+}
+
+.flight-strip.departure {
+    background-color: rgba(0, 123, 255, 0.2);
+}
+
+.flight-strip.approach {
+    background-color: rgba(40, 167, 69, 0.2);
+}
+
+.flight-strip.ground {
+    background-color: rgba(255, 193, 7, 0.2);
+}
+
+.flight-strip.tower {
+    background-color: rgba(220, 53, 69, 0.2);
+}
+
+.flight-strip input, .flight-strip select {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff; /* Input text color */
+    font-size: 0.9em; /* Slightly larger font size */
+}
+
+.flight-strip input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Placeholder text color */
+    opacity: 1; /* Ensure placeholder is fully visible */
+}
+
+.flight-strip select {
+    appearance: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    font-size: 0.9em; /* Slightly larger font size */
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.flight-strip .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.flight-strip .row input {
+    flex: 1;
+}
+
+.clearance-status {
+    margin-top: 10px;
+}
+
+.clearance-status label {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+}
