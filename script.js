@@ -83,3 +83,45 @@ document.querySelectorAll('.column').forEach(column => {
     column.addEventListener('dragleave', dragLeave);
     column.addEventListener('drop', drop);
 });
+
+// Firebase configuration (use environment variables or a separate config file)
+const firebaseConfig = {
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  };
+
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+// Function to add a new flight strip to Firestore
+function addFlightStripToFirestore(stripData) {
+    flightStripsRef.add(stripData)
+        .then(() => {
+            console.log('Flight strip added to Firestore');
+        })
+        .catch((error) => {
+            console.error('Error adding flight strip: ', error);
+        });
+}
+
+// Example: When creating a new flight strip
+function createFlightStrip() {
+    const squawk = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+    const stripData = {
+        callsign: document.querySelector('[placeholder="CALLSIGN"]').value,
+        type: document.querySelector('[placeholder="TYPE"]').value,
+        dep: document.querySelector('[placeholder="DEP"]').value,
+        arr: document.querySelector('[placeholder="ARR"]').value,
+        flt: document.querySelector('[placeholder="FLT"]').value,
+        fltplan: document.querySelector('[placeholder="FLTPLN"]').value,
+        notes: document.querySelector('[placeholder="Notes"]').value,
+        clearance: document.querySelector('#clearance').value,
+        column: 'departure', // Default column
+        squawk: squawk,
+    };
+    addFlightStripToFirestore(stripData);
+}
