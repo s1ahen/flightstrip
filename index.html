@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button id="createStrip"><i class="fas fa-plus"></i> Create Flight Strip</button>
+    <div class="controls">
+        <button id="createStrip"><i class="fas fa-plus"></i> Add Card</button>
+        <button id="deleteMode"><i class="fas fa-trash"></i> Delete Mode</button>
+    </div>
     <div class="columns">
         <div id="departure" class="column"><h2>Departure</h2></div>
         <div id="approach" class="column"><h2>Approach</h2></div>
         <div id="ground" class="column"><h2>Ground</h2></div>
         <div id="tower" class="column"><h2>Tower</h2></div>
     </div>
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
