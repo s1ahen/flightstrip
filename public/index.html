@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Strip Manager</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <div class="controls">
+        <button id="createStrip"><i class="fas fa-plus"></i> Add Card</button>
+        <button id="deleteMode"><i class="fas fa-trash"></i> Delete Mode</button>
+    </div>
+    <div class="columns">
+        <div id="departure" class="column"><h2>Departure</h2></div>
+        <div id="approach" class="column"><h2>Approach</h2></div>
+        <div id="ground" class="column"><h2>Ground</h2></div>
+        <div id="tower" class="column"><h2>Tower</h2></div>
+    </div>
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js"></script>
+    <script type="module" src="/scripts/script.js"></script>
+</body>
+</html>
