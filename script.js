@@ -4,21 +4,27 @@ document.getElementById('deleteMode').addEventListener('click', toggleDeleteMode
 let isDeleteMode = false;
 
 function createFlightStrip() {
+    // Generate a random squawk code
     const squawk = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+
+    // Create the flight strip
     const strip = document.createElement('div');
     strip.className = 'flight-strip';
     strip.draggable = true;
     strip.id = `strip-${Date.now()}`;
     strip.innerHTML = `
         <div class="row">
-            <input type="text" placeholder="CALLSIGN">
-            <input type="text" placeholder="TYPE">
+            <input type="text" placeholder="CALLSIGN" style="width: 48%;">
+            <input type="text" placeholder="TYPE" style="width: 48%;">
         </div>
-        <div><strong>Squawk:</strong> ${squawk}</div>
         <div class="row">
-            <input type="text" placeholder="DEP">
-            <input type="text" placeholder="ARR">
-            <input type="text" placeholder="FLT">
+            <label for="squawk"><strong>Squawk:</strong></label>
+            <input type="text" id="squawk" value="${squawk}" maxlength="4" style="width: 60px;">
+        </div>
+        <div class="row">
+            <input type="text" placeholder="DEP" style="width: 30%;">
+            <input type="text" placeholder="ARR" style="width: 30%;">
+            <input type="text" placeholder="FLT" style="width: 30%;">
         </div>
         <input type="text" placeholder="FLTPLN">
         <input type="text" placeholder="Notes">
@@ -33,9 +39,13 @@ function createFlightStrip() {
         </div>
         <button class="delete-btn">Delete</button>
     `;
+
+    // Add event listeners
     strip.querySelector('.delete-btn').addEventListener('click', () => deleteStrip(strip.id));
     strip.addEventListener('dragstart', dragStart);
     strip.addEventListener('dragend', dragEnd);
+
+    // Append the strip to the departure column
     document.getElementById('departure').appendChild(strip);
 }
 
@@ -75,7 +85,28 @@ function drop(event) {
     const id = event.dataTransfer.getData('text');
     const draggable = document.getElementById(id);
     const targetColumn = event.target.closest('.column');
+
     if (targetColumn) {
+        // Remove any existing column-specific classes
+        draggable.classList.remove(
+            'departure-strip',
+            'approach-strip',
+            'ground-strip',
+            'tower-strip'
+        );
+
+        // Add a class based on the target column
+        if (targetColumn.id === 'departure') {
+            draggable.classList.add('departure-strip');
+        } else if (targetColumn.id === 'approach') {
+            draggable.classList.add('approach-strip');
+        } else if (targetColumn.id === 'ground') {
+            draggable.classList.add('ground-strip');
+        } else if (targetColumn.id === 'tower') {
+            draggable.classList.add('tower-strip');
+        }
+
+        // Append the strip to the target column
         targetColumn.appendChild(draggable);
     }
 }
