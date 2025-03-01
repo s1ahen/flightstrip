@@ -13,9 +13,10 @@ function createFlightStrip() {
     strip.draggable = true;
     strip.id = `strip-${Date.now()}`;
     strip.innerHTML = `
-        <div class="row">
-            <input type="text" placeholder="CALLSIGN" style="width: 48%;">
-            <input type="text" placeholder="TYPE" style="width: 48%;">
+        <button class="minimize-btn">▼</button>
+        <div class="row callsign-row">
+            <input type="text" class="callsign-input" placeholder="CALLSIGN" style="width: 48%;">
+            <input type="text" class="type-input" placeholder="TYPE" style="width: 48%;">
         </div>
         <div class="row">
             <label for="squawk"><strong>Squawk:</strong></label>
@@ -44,6 +45,13 @@ function createFlightStrip() {
     strip.querySelector('.delete-btn').addEventListener('click', () => deleteStrip(strip.id));
     strip.addEventListener('dragstart', dragStart);
     strip.addEventListener('dragend', dragEnd);
+
+    // Add minimize/expand functionality
+    const minimizeBtn = strip.querySelector('.minimize-btn');
+    minimizeBtn.addEventListener('click', () => {
+        strip.classList.toggle('minimized');
+        minimizeBtn.textContent = strip.classList.contains('minimized') ? '►' : '▼';
+    });
 
     // Append the strip to the departure column
     document.getElementById('departure').appendChild(strip);

@@ -168,3 +168,51 @@ button:hover {
     font-weight: bold; /* Ensure center names are bold */
     margin-right: 5px; /* Add spacing between the name and frequency */
 }
+/* Add these styles to your existing CSS */
+.flight-strip {
+    position: relative; /* Ensure the arrow is positioned correctly */
+}
+
+/* Add these styles to your existing CSS */
+.minimize-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 0.8em; /* Smaller arrow */
+    padding: 5px; /* Add padding for better clickability */
+    transition: transform 0.3s ease; /* Smooth rotation animation */
+}
+
+.minimize-btn:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.minimized .minimize-btn {
+    transform: rotate(-90deg); /* Rotate arrow sideways when minimized */
+}
+
+.minimized .row:not(.callsign-row),
+.minimized input[type="text"]:not(.callsign-input):not(.type-input),
+.minimized .clearance-status,
+.minimized .delete-btn {
+    display: none; /* Hide all elements except Callsign and Type */
+}
+
+.callsign-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-right: 30px; /* Add padding to prevent overlap with the arrow */
+}
+
+.callsign-input {
+    width: 60%; /* Adjust width for Callsign input */
+}
+
+.type-input {
+    width: 30%; /* Adjust width for Aircraft Type input */
+}
