@@ -113,3 +113,58 @@ button:hover {
 #tower .flight-strip {
     background-color: rgba(220, 53, 69, 0.2); /* Red for Tower */
 }
+
+/* Add these styles to your existing CSS */
+.header {
+    width: 100%;
+    padding: 10px 20px; /* Added padding to move content away from the sides */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.airport-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px; /* Move the dropdown away from the side */
+}
+
+.airport-selector label {
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.8);
+}
+/* Add these styles to your existing CSS */
+.airport-selector select {
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    border-radius: 5px;
+    width: 100px; /* Set a fixed width for the dropdown */
+    font-size: 0.9em; /* Make the text slightly smaller */
+}
+
+.frequencies {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9em;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    margin-left: 120px; /* Add margin to avoid overlapping with the dropdown */
+}
+
+.frequencies div {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.frequencies strong {
+    font-weight: bold; /* Ensure center names are bold */
+    margin-right: 5px; /* Add spacing between the name and frequency */
+}

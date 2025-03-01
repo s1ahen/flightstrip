@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="header">
+        <div class="airport-selector">
+            <label for="airport">Select Airport:</label>
+            <select id="airport">
+                <option value="">-- Select --</option>
+                <option value="KJFK">KJFK</option>
+                <option value="KLAX">KLAX</option>
+                <option value="KMIA">KMIA</option>
+                <!-- Add more airports as needed -->
+            </select>
+        </div>
+        <div class="frequencies">
+            <div><strong>Tower:</strong> <span id="tower-freq">-</span></div>
+            <div><strong>Ground:</strong> <span id="ground-freq">-</span></div>
+            <div><strong id="center1-name">-</strong> <span id="center1-freq">-</span></div>
+            <div><strong id="center2-name">-</strong> <span id="center2-freq">-</span></div>
+            <div><strong id="center3-name">-</strong> <span id="center3-freq">-</span></div>
+        </div>
+    </div>
     <div class="controls">
         <button id="createStrip"><i class="fas fa-plus"></i> Add Card</button>
         <button id="deleteMode"><i class="fas fa-trash"></i> Delete Mode</button>

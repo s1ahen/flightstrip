@@ -110,3 +110,76 @@ function drop(event) {
         targetColumn.appendChild(draggable);
     }
 }
+
+
+// Airport frequency data with custom center names
+const airportFrequencies = {
+    "KJFK": {
+        tower: "118.70",
+        ground: "121.90",
+        centers: [
+            { name: "NEW YORK CENTER", frequency: "125.50" },
+            { name: "NEW YORK CENTER", frequency: "126.20" },
+            { name: "NEW YORK CENTER", frequency: "128.60" }
+        ]
+    },
+    "KLAX": {
+        tower: "120.95",
+        ground: "121.75",
+        centers: [
+            { name: "LOS ANGELES CENTER", frequency: "124.70" },
+            { name: "LOS ANGELES CENTER", frequency: "125.30" },
+            { name: "LOS ANGELES CENTER", frequency: "127.80" }
+        ]
+    },
+    "KMIA": {
+        tower: "120.30",
+        ground: "121.80",
+        centers: [
+            { name: "MIAMI CENTER", frequency: "124.20" },
+            { name: "MIAMI CENTER", frequency: "125.10" },
+            { name: "MIAMI CENTER", frequency: "127.40" }
+        ]
+    }
+    // Add more airports as needed
+};
+
+// Get references to the dropdown and frequency display elements
+const airportDropdown = document.getElementById('airport');
+const towerFreq = document.getElementById('tower-freq');
+const groundFreq = document.getElementById('ground-freq');
+const center1Name = document.getElementById('center1-name');
+const center1Freq = document.getElementById('center1-freq');
+const center2Name = document.getElementById('center2-name');
+const center2Freq = document.getElementById('center2-freq');
+const center3Name = document.getElementById('center3-name');
+const center3Freq = document.getElementById('center3-freq');
+
+// Add event listener to the dropdown
+airportDropdown.addEventListener('change', (event) => {
+    const selectedAirport = event.target.value;
+
+    if (selectedAirport && airportFrequencies[selectedAirport]) {
+        const frequencies = airportFrequencies[selectedAirport];
+        towerFreq.textContent = frequencies.tower;
+        groundFreq.textContent = frequencies.ground;
+        center1Name.textContent = frequencies.centers[0].name;
+        center1Freq.textContent = frequencies.centers[0].frequency;
+        center2Name.textContent = frequencies.centers[1].name;
+        center2Freq.textContent = frequencies.centers[1].frequency;
+        center3Name.textContent = frequencies.centers[2].name;
+        center3Freq.textContent = frequencies.centers[2].frequency;
+    } else {
+        // Reset frequencies if no airport is selected
+        towerFreq.textContent = "-";
+        groundFreq.textContent = "-";
+        center1Name.textContent = "-";
+        center1Freq.textContent = "-";
+        center2Name.textContent = "-";
+        center2Freq.textContent = "-";
+        center3Name.textContent = "-";
+        center3Freq.textContent = "-";
+    }
+});
+
+// Rest of your existing script.js code...
