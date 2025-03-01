@@ -111,18 +111,25 @@ function drop(event) {
     }
 }
 
-
 // Airport frequency data with custom center names
 const airportFrequencies = {
     "IBAR": {
         tower: "118.080",
         ground: "N/A",
-
+        centers: [
+            { name: "N/A", frequency: "N/A" },
+            { name: "N/A", frequency: "N/A" },
+            { name: "N/A", frequency: "N/A" }
+        ]
     },
     "IHEN": {
-        tower: "N/A",
+        tower: "122.800",
         ground: "N/A",
-        centers: 
+        centers: [
+            { name: "N/A", frequency: "N/A" },
+            { name: "N/A", frequency: "N/A" },
+            { name: "N/A", frequency: "N/A" }
+        ]
     },
     "ILAR": {
         tower: "121.200",
@@ -335,5 +342,3 @@ airportDropdown.addEventListener('change', (event) => {
         center3Freq.textContent = "-";
     }
 });
-
-// Rest of your existing script.js code...
