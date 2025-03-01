@@ -114,31 +114,185 @@ function drop(event) {
 
 // Airport frequency data with custom center names
 const airportFrequencies = {
-    "KJFK": {
-        tower: "118.70",
-        ground: "121.90",
+    "IBAR": {
+        tower: "118.080",
+        ground: "N/A",
+
+    },
+    "IHEN": {
+        tower: "N/A",
+        ground: "N/A",
+        centers: 
+    },
+    "ILAR": {
+        tower: "121.200",
+        ground: "199.400",
         centers: [
-            { name: "NEW YORK CENTER", frequency: "125.50" },
-            { name: "NEW YORK CENTER", frequency: "126.20" },
-            { name: "NEW YORK CENTER", frequency: "128.60" }
+            { name: "ROCKFORD CENTER", frequency: "124.850" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "IZOLIRANI CENTER", frequency: "124.640" }
         ]
     },
-    "KLAX": {
-        tower: "120.95",
-        ground: "121.75",
+    "IIAB": {
+        tower: "127.250",
+        ground: "N/A",
         centers: [
-            { name: "LOS ANGELES CENTER", frequency: "124.70" },
-            { name: "LOS ANGELES CENTER", frequency: "125.30" },
-            { name: "LOS ANGELES CENTER", frequency: "127.80" }
+            { name: "ROCKFORD CENTER", frequency: "124.850" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "IZOLIRANI CENTER", frequency: "124.640" }
         ]
     },
-    "KMIA": {
-        tower: "120.30",
-        ground: "121.80",
+    "IPAP": {
+        tower: "119.900",
+        ground: "120.800",
         centers: [
-            { name: "MIAMI CENTER", frequency: "124.20" },
-            { name: "MIAMI CENTER", frequency: "125.10" },
-            { name: "MIAMI CENTER", frequency: "127.40" }
+            { name: "ROCKFORD CENTER", frequency: "124.850" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "IZOLIRANI CENTER", frequency: "124.640" }
+        ]
+    },
+    "IGRV": {
+        tower: "118.300",
+        ground: "121.900",
+        centers: [
+            { name: "ROCKFORD CENTER", frequency: "124.850" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "TOKYO CENTER", frequency: "132.300" }
+        ]
+    },
+    "IJAF": {
+        tower: "119.100",
+        ground: "121.700",
+        centers: [
+            { name: "LARNACA CENTER", frequency: "126.300" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "PERTH CENTER", frequency: "135.250" }
+        ]
+    },
+    "IZOL": {
+        tower: "118.700",
+        ground: "121.900",
+        centers: [
+            { name: "LARNACA CENTER", frequency: "126.300" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "PERTH CENTER", frequency: "135.250" }
+        ]
+    },
+    "ISCM": {
+        tower: "118.220",
+        ground: "N/A",
+        centers: [
+            { name: "LARNACA CENTER", frequency: "126.300" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "PERTH CENTER", frequency: "135.250" }
+        ]
+    },
+    "IDSC": {
+        tower: "122.500",
+        ground: "N/A",
+        centers: [
+            { name: "PERTH CENTER", frequency: "135.250" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "GRINDAVIK CENTER", frequency: "126.750" }
+        ]
+    },
+    "ITKO": {
+        tower: "118.800",
+        ground: "118.225",
+        centers: [
+            { name: "PERTH CENTER", frequency: "135.250" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "GRINDAVIK CENTER", frequency: "126.750" }
+        ]
+    },
+    "ILKL": {
+        tower: "120.150",
+        ground: "N/A",
+        centers: [
+            { name: "IZOLIRANI CENTER", frequency: "124.640" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "TOKYO CENTER", frequency: "132.300" }
+        ]
+    },
+    "IPPH": {
+        tower: "127.400",
+        ground: "121.700",
+        centers: [
+            { name: "IZOLIRANI CENTER", frequency: "124.640" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "TOKYO CENTER", frequency: "132.300" }
+        ]
+    },
+    "IGAR": {
+        tower: "118.800",
+        ground: "N/A",
+        centers: [
+            { name: "ROCKFORD CENTER", frequency: "124.850" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "LARNACA CENTER", frequency: "126.300" }
+        ]
+    },
+    "IBLT": {
+        tower: "118.430",
+        ground: "N/A",
+        centers: [
+            { name: "ROCKFORD CENTER", frequency: "124.850" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "LARNACA CENTER", frequency: "126.300" }
+        ]
+    },
+    "IRFD": {
+        tower: "124.850",
+        ground: "120.400",
+        centers: [
+            { name: "ROCKFORD CENTER", frequency: "124.850" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "LARNACA CENTER", frequency: "126.300" }
+        ]
+    },
+    "ITRC": {
+        tower: "118.500",
+        ground: "N/A",
+        centers: [
+            { name: "ROCKFORD CENTER", frequency: "124.850" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "LARNACA CENTER", frequency: "126.300" }
+        ]
+    },
+    "IBTH": {
+        tower: "128.600",
+        ground: "N/A",
+        centers: [
+            { name: "ROCKFORD CENTER", frequency: "124.850" },
+            { name: "TOKYO CENTER", frequency: "132.300" },
+            { name: "IZOLIRANI CENTER", frequency: "124.640" }
+        ]
+    },
+    "ISAU": {
+        tower: "118.205",
+        ground: "130.880",
+        centers: [
+            { name: "ROCKFORD CENTER", frequency: "124.850" },
+            { name: "GRINDAVIK CENTER", frequency: "126.750" },
+            { name: "IZOLIRANI CENTER", frequency: "124.640" }
+        ]
+    },
+    "ISKP": {
+        tower: "118.400",
+        ground: "N/A",
+        centers: [
+            { name: "ROCKFORD CENTER", frequency: "124.850" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "IZOLIRANI CENTER", frequency: "124.640" }
+        ]
+    },
+    "IMLR": {
+        tower: "133.850",
+        ground: "N/A",
+        centers: [
+            { name: "ROCKFORD CENTER", frequency: "124.850" },
+            { name: "SOTAF CENTER", frequency: "128.600" },
+            { name: "LARNACA CENTER", frequency: "126.300" }
         ]
     }
     // Add more airports as needed
